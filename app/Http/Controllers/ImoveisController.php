@@ -171,6 +171,9 @@ class ImoveisController extends Controller
         if($request->has("orderBy")){
             $orderBy=$request->orderBy;
         }
+        if($request->has("perPage")){
+            $perPage=$request->perPage;
+        }
 
         $imoveis = Imovel::with(['tipo','estado','municipio','bairro'])
                             ->where('estado_id',$estadoCompare ,$estado)
